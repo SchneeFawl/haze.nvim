@@ -16,6 +16,19 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up in Visual m
 vim.keymap.set("n", "n", "nzzzv", { desc = "Move down with the cursor centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Move up with the cursor centered" })
 
+-----------------------
 -- PLUGIN SPECIFIC:
+--- mini.files
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "Open Mini file explorer" })
+
+--- mini.pick
+vim.keymap.set("n", "<leader>fe", "<cmd>lua MiniPick.builtin.files()<CR>", { desc = "MiniPick Files" })
+vim.keymap.set("n", "<leader>fg",
+    function() MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") }) end,
+    { desc = "MiniPick Grep" }
+)
+vim.keymap.set("n", "<leader>fh", "<cmd>lua MiniPick.builtin.help()<CR>", { desc = "MiniPick Help" })
+
+--- mini.extra
+vim.keymap.set("n", "<leader>fk", "<cmd>lua MiniExtra.pickers.keymaps()<CR>", { desc = "Helper for searching keymaps" })
 
