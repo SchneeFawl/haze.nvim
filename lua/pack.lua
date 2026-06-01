@@ -3,7 +3,8 @@ vim.pack.add({
     { src = "https://github.com/brenoprata10/nvim-highlight-colors" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
     { src = "https://github.com/rafamadriz/friendly-snippets" },
-
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
+    { src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 require("nvim-highlight-colors").setup({})
@@ -65,5 +66,18 @@ MiniSnippets.setup({
 })
 MiniSnippets.start_lsp_server({ match = false })
 
+require("mini.diff").setup({})
+
 require("mini.extra").setup({})
+
+
+-- treesitter
+require("treesitter")
+
+-- lualine
+require("lualine").setup({
+    options = {
+        theme = "embark"
+    }
+})
 

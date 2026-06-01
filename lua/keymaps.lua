@@ -8,13 +8,17 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
 vim.keymap.set("v", "<", "<gv", { desc = "Unindent and keep selection" })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
-vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlightings", silent = true })  -- Ctrl + C
+vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlightings", silent = true }) -- Ctrl + C
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down in Visual mode" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move lines up in Visual mode" })
 
+-- Search keymaps
 vim.keymap.set("n", "n", "nzzzv", { desc = "Move down with the cursor centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Move up with the cursor centered" })
+
+vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format local buffer" })
+vim.keymap.set("n", "<leader>fd", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 
 -----------------------
 -- PLUGIN SPECIFIC:
