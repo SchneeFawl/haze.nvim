@@ -5,8 +5,9 @@ require("pack")
 require("keymaps")
 require("treesitter")
 require("colors")
+require("blink")
 
--- LSP Configs
+-- LSP CONFIG
 vim.lsp.enable({
     "lua_ls",
     "qmlls6",

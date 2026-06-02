@@ -42,17 +42,6 @@ require("mini.surround").setup({})
 
 require("mini.pick").setup({})
 
-require("mini.completion").setup({
-    lsp_completion = {
-        auto_setup = true,
-        process_items = function(items, base)
-            return MiniCompletion.default_process_items(items, base, {
-                filtersort = "fuzzy"
-            })
-        end
-    }
-})
-
 local MiniSnippets = require("mini.snippets")
 MiniSnippets.setup({
     snippets = {
@@ -70,14 +59,11 @@ require("mini.diff").setup({})
 
 require("mini.extra").setup({})
 
-
 -- treesitter
 require("treesitter")
 
 -- lualine
 require("lualine").setup({
-    options = {
-        theme = "embark"
-    }
+    -- options = {}
 })
 
