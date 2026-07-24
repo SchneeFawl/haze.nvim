@@ -5,6 +5,8 @@ vim.pack.add({
     { src = "https://github.com/rafamadriz/friendly-snippets" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
+    { src = "https://github.com/akinsho/bufferline.nvim" },
+    { src = "https://github.com/mcauley-penney/visual-whitespace.nvim" },
 })
 
 require("nvim-highlight-colors").setup({})
@@ -39,8 +41,10 @@ require("mini.cmdline").setup({
 })
 
 require("mini.surround").setup({})
-
+require("mini.pairs").setup({})
 require("mini.pick").setup({})
+require("mini.extra").setup({})
+require("mini.diff").setup({})
 
 local MiniSnippets = require("mini.snippets")
 MiniSnippets.setup({
@@ -55,15 +59,29 @@ MiniSnippets.setup({
 })
 MiniSnippets.start_lsp_server({ match = false })
 
-require("mini.diff").setup({})
-
-require("mini.extra").setup({})
-
--- treesitter
 require("treesitter")
 
--- lualine
-require("lualine").setup({
-    -- options = {}
+require("lualine").setup({})
+
+require("bufferline").setup({
+    options = {
+        separator_style = "slant",
+        indicator = {
+            icon = "▎",
+            style = "icon"
+        },
+        hover = {
+            enabled = true,
+            delay = 180
+        },
+        diagnostics = "nvim_lsp",
+        diagnostics_indicator = function(count, level)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+        end,
+        always_show_bufferline = true,
+    }
 })
+
+require("visual-whitespace").setup({})
 

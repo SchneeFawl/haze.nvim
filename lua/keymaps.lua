@@ -20,8 +20,10 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Move up with the cursor centered" })
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Format local buffer" })
 vim.keymap.set("n", "<leader>fd", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 
------------------------
--- PLUGIN SPECIFIC:
+----------------------
+-- PLUGIN SPECIFIC: --
+----------------------
+
 --- mini.files
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "Open Mini file explorer" })
 
@@ -35,4 +37,8 @@ vim.keymap.set("n", "<leader>fh", "<cmd>lua MiniPick.builtin.help()<CR>", { desc
 
 --- mini.extra
 vim.keymap.set("n", "<leader>fk", "<cmd>lua MiniExtra.pickers.keymaps()<CR>", { desc = "Helper for searching keymaps" })
+
+--- bufferline
+vim.keymap.set("n", "<leader>l", "<cmd>:BufferLineCycleNext<CR>", { desc = "Cycle to next buffer" })
+vim.keymap.set("n", "<leader>h", "<cmd>:BufferLineCyclePrev<CR>", { desc = "Cycle to previous buffer" })
 
