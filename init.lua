@@ -9,9 +9,11 @@ require("blink")
 
 -- LSP CONFIG
 vim.lsp.enable({
+    "ts_ls",
     "lua_ls",
     "qmlls6",
     "pyright",
+    "bashls",
     "cssls",
     "html",
 })

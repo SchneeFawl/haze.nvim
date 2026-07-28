@@ -40,6 +40,18 @@ require("mini.cmdline").setup({
     }
 })
 
+require("mini.indentscope").setup({
+    symbol = "│",
+    draw = {
+        delay = 10,
+        animation = require("mini.indentscope").gen_animation.linear({
+            duration = 15,
+            unit = "step",
+            easing = "out"
+        }),
+    },
+})
+
 require("mini.surround").setup({})
 require("mini.pairs").setup({})
 require("mini.pick").setup({})
