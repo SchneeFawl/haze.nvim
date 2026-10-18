@@ -11,6 +11,7 @@ require("blink")
 vim.lsp.enable({
     "ts_ls",
     "lua_ls",
+    "rust_analyzer",
     "qmlls6",
     "pyright",
     "bashls",
